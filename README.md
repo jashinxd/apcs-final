@@ -6,6 +6,13 @@ Jason Shin, Shi Shu
 What our project does
 How to use our project
 
+Ideas
+======
+  Pokemon with GUI
+  NBA Season Simulation
+  Poker
+  Web Browser
+
 Changelog
 ==========
 
