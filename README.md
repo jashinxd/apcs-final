@@ -8,10 +8,10 @@ How to use our project
 
 Ideas
 ======
-  Pokemon with GUI
-  NBA Season Simulation
-  Poker
-  Web Browser
+  Pokemon with GUI<br>
+  NBA Season Simulation<br>
+  Poker<br>
+  Web Browser<br>
 
 Changelog
 ==========
