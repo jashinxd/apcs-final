@@ -9,4 +9,4 @@ How to use our project
 Changelog
 ==========
 
-**12/19/14 - Created repo - JS
+*12/19/14 - Created repo - JS
