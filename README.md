@@ -8,5 +8,6 @@ How to use our project
 
 Changelog
 ==========
-
-  *12/19/14 - Created repo - JS
+<ul>
+*12/19/14 - Created repo - JS
+</ul>
