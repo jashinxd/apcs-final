@@ -1,0 +1,6 @@
+Vending Machine:
+ Classes:
+  Items.java
+   -Defines the items: Buying Price, Selling Price, Name
+  VM.java
+   -
