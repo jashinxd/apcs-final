@@ -12,9 +12,11 @@ Ideas
   NBA Season Simulation<br>
   Poker<br>
   Web Browser<br>
+  Vending Machine<br>
 
 Changelog
 ==========
 
   12/19/14 - Created repo - JS
+  12/21/14 - Decided on doing Vending Machine
 
