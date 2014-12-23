@@ -2,8 +2,8 @@ apcs-final
 ==========
 
 Pd. 1
-Jason Shin, Shi Shu
-What our project does
+Jason Shin, Shi Shu<br>
+What our project does<br>
 How to use our project
 
 Ideas
