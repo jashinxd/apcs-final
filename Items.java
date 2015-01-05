@@ -1,11 +1,11 @@
-public class Items2 {
+public class Items{
 
     private String name;
     private double Bprice;
     private double Sprice;
     private int stocks;
         
-    public Items2 (String n) {
+    public Items(String n) {
 	name = n;
 	if (name.equals("Beef Jerky")){
 	    Bprice = 1.0;
