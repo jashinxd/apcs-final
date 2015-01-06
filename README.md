@@ -21,4 +21,5 @@ Changelog
   12/21/14 - Decided on doing Vending Machine<br>
   12/22/14 - added Items, Items2, VM<br>
   1/5/14 - Finished initialization for the items, randomized items added to VM<br>
+  1/6/14 - Added more items, added Machine.java (GUI)<br>
 
