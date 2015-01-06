@@ -18,9 +18,8 @@ public class VM {
 	    int rand = r.nextInt(9);
 	    items.add(new Items(itemNames.get(rand)));
 	}
-	System.out.println(items);
 	for(int i = 0; i < 20; i ++){
-	    System.out.println(items.get(i).getname());
+	    //System.out.println(items.get(i).getname()+":"+items.get(i).getstocks() + "-"+ items.get(i).getsprice() +"/" + items.get(i).getbprice());
 	}
     }
 }
