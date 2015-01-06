@@ -1,0 +1,14 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Machine extends JFrame{
+    public Machine(){
+	setTitle("Vending Machine");
+	set size(600,600);
+	setLocation(100,100);
+	setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+    }
+
+}
