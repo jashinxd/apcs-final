@@ -13,13 +13,21 @@ public class VM {
 	itemNames.add("Nacho Chips");
 	itemNames.add("Granola Bar");
 	itemNames.add("SunChips");
+	itemNames.add("Skittles");
+	itemNames.add("Fruit Snacks");
+	itemNames.add("Jello");
+	itemNames.add("Chocolate Bar");
+	itemNames.add("Graham Crackers");
+	itemNames.add("Rice Krispies");
+	itemNames.add("Starburst");
+	
 	ArrayList<Items> items = new ArrayList<Items>();
 	for(int i = 0; i < 20; i ++){
-	    int rand = r.nextInt(9);
+	    int rand = r.nextInt(16);
 	    items.add(new Items(itemNames.get(rand)));
 	}
 	for(int i = 0; i < 20; i ++){
-	    //System.out.println(items.get(i).getname()+":"+items.get(i).getstocks() + "-"+ items.get(i).getsprice() +"/" + items.get(i).getbprice());
+	    System.out.println(items.get(i).getname()+":"+items.get(i).getstocks() + "-"+ items.get(i).getsprice() +"/" + items.get(i).getbprice());
 	}
     }
 }
