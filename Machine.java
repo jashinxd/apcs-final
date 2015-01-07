@@ -15,7 +15,7 @@ public class Machine extends JFrame{
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 	pane = getContentPane();
-	pane.setLayout(new GridLayout(5,4));
+	pane.setLayout(new GridLayout(5,4,25,25));
 	VM jason = new VM();
 	for(int i = 0;i<20;i ++){
 	    Buttons[i] = new JButton(jason.getItems().get(i).getname());
