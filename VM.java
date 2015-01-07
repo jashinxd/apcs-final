@@ -1,9 +1,11 @@
 import java.io.*;
 import java.util.*;
 public class VM {
-    public static void main(String[] args) {
+    private ArrayList<String> itemNames;
+    private ArrayList<Items> items;
+    public VM(){
 	Random r = new Random();
-	ArrayList<String> itemNames = new ArrayList<String>();
+        itemNames = new ArrayList<String>();
 	itemNames.add("Beef Jerky");
 	itemNames.add("Sliced Apples");
 	itemNames.add("Potato Chips");
@@ -21,13 +23,19 @@ public class VM {
 	itemNames.add("Rice Krispies");
 	itemNames.add("Starburst");
 	
-	ArrayList<Items> items = new ArrayList<Items>();
+        items = new ArrayList<Items>();
 	for(int i = 0; i < 20; i ++){
 	    int rand = r.nextInt(16);
 	    items.add(new Items(itemNames.get(rand)));
 	}
-	for(int i = 0; i < 20; i ++){
-	    System.out.println(items.get(i).getname()+":"+items.get(i).getstocks() + "-"+ items.get(i).getsprice() +"/" + items.get(i).getbprice());
-	}
     }
+    public ArrayList<Items> getItems(){
+	    return items;
+	} 
+    /* public static void main(String[] args) {
+	VM a = new VM();
+	for(int i = 0; i < 20; i ++){
+	    System.out.println(a.getItems().get(i).getname()+":"+a.getItems().get(i).getstocks() + "-"+ a.getItems().get(i).getsprice() +"/" + a.getItems().get(i).getbprice());
+	}
+	}*/
 }
