@@ -15,4 +15,4 @@ Changelog
   1/5/15 - Finished initialization for the items, randomized items added to VM<br>
   1/6/15 - Added more items, added Machine.java (GUI)<br>
   1/7/15 - Continued working on Machine.java, added buttons<br>
-
+  1/8/15 - Changed back to gridlayout from Spring layout<br>
