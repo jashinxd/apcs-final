@@ -11,9 +11,9 @@ public class Machine extends JFrame{
     public Machine(){
 	setTitle("Vending Machine");
 	setSize(600,600);
-	setLocation(100,100);
+	setLocation(500,200);
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+	
 	pane = getContentPane();
 	pane.setLayout(new GridLayout(5,4,25,25));
 	VM jason = new VM();
