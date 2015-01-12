@@ -5,10 +5,13 @@ import java.awt.event.*;
 public class Machine extends JFrame implements ActionListener{
     private Container pane;
     private JButton[] Buttons = new JButton[20];
+    private JButton add25c, add1d, add5d; 
     private double[] sprices = new double[20];
-    private JTextArea text;
+    private double amt = 0.00;
+    private double prc = 0.00;
+    private JTextArea text1, text2;
     private JPanel machine;
-    private JLabel price;
+    private JLabel price, inserted;
     private VM jason;
     
     public Machine(){
@@ -22,15 +25,24 @@ public class Machine extends JFrame implements ActionListener{
 
 	price = new JLabel("Price:");
 	pane.add(price);
+	text1 = new JTextArea();
+	text1.setColumns(10);
+	text1.setRows(1);
+	text1.setEditable(false);
+	//text1.setBackground(Color.BLACK);
+	text1.setBorder(BorderFactory.createLineBorder(Color.red,2));
+	pane.add(text1);
 
-	text = new JTextArea();
-	text.setColumns(10);
-	text.setRows(1);
-	text.setEditable(false);
-	//text.setBackground(Color.BLACK);
-	text.setBorder(BorderFactory.createLineBorder(Color.red,2));
-	pane.add(text);
-	
+	inserted = new JLabel("Amt Inserted");
+	pane.add(inserted);
+	text2 = new JTextArea("$0.00");
+	text2.setColumns(10);
+	text2.setRows(1);
+	text2.setEditable(false);
+	text2.setBorder(BorderFactory.createLineBorder(Color.red,2));
+	pane.add(text2);
+
+	//Buttons for Items
 	JPanel machine = new JPanel();
 	machine.setLayout(new GridLayout(10,2));
 	VM jason = new VM();
@@ -44,16 +56,34 @@ public class Machine extends JFrame implements ActionListener{
 	//machine.setSize(600,600);
 	machine.setBorder(BorderFactory.createLineBorder(Color.blue,2));
 	pane.add(machine);
-        for (int i = 0; i < 20; i++) {
-	    System.out.println(jason.getItems().get(i).getsprice());
-	}
+
+	//Buttons to Insert Money
+	add25c = new JButton("Add $0.25");
+	add25c.addActionListener(this);
+	pane.add(add25c);
+	add1d = new JButton("Add $1.00");
+	add1d.addActionListener(this);
+	pane.add(add1d);
+	add5d = new JButton("Add $5.00");
+	add5d.addActionListener(this);
+	pane.add(add5d);	
     }
 
     public void actionPerformed(ActionEvent e) {
-	for (int i = 0; i < 20; i++) {	    
+	for (int i = 0; i < 20; i++) {
 	    if (e.getSource() == Buttons[i]) {
-		text.setText(""+sprices[i]);
-		//text.setText("hello");
+		text1.setText("$"+sprices[i]);
+		prc = sprices[i];
+		if (text1.getText().length() == 4) {
+		    text1.setText(text1.getText() + "0");
+		}	       
+	    }
+	    if (e.getSource() == add25c) {
+		amt = amt + .25 ;
+		text2.setText("$" + amt);
+		if (text2.getText().length() == 4) {
+		  text2.setText(text1.getText() + "0");
+		}
 	    }
 	}
     }
