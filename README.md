@@ -16,3 +16,4 @@ Changelog
   1/6/15 - Added more items, added Machine.java (GUI)<br>
   1/7/15 - Continued working on Machine.java, added buttons<br>
   1/8/15 - Changed back to gridlayout from Spring layout<br>
+  1/9/15 - Added JtextArea for price of the goods<br>
