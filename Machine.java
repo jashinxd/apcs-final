@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
 public class Machine extends JFrame{
     private Container pane;
     private JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20;
@@ -13,7 +12,6 @@ public class Machine extends JFrame{
 	setSize(600,600);
 	setLocation(500,200);
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
-	
 	pane = getContentPane();
 	pane.setLayout(new GridLayout(5,4,25,25));
 	VM jason = new VM();
@@ -21,11 +19,9 @@ public class Machine extends JFrame{
 	    Buttons[i] = new JButton(jason.getItems().get(i).getname());
 	    pane.add(Buttons[i]);
 	}
-     
     }
     public static void main(String[] args){
 	Machine a = new Machine();
 	a.setVisible(true);
     }
-
 }
