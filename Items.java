@@ -14,6 +14,11 @@ public class Items{
 	    Sprice = 1.50;
 	    stocks = s;
 	}
+	if (n.equals("Haribo's")){
+	    Bprice = 0.50;
+	    Sprice = 1.00;
+	    stocks = s;
+	}
 	if (n.equals("Sliced Apples")){
 	    Bprice = 0.75;
 	    Sprice = 1.00;

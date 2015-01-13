@@ -22,10 +22,11 @@ public class VM {
 	itemNames.add("Graham Crackers");
 	itemNames.add("Rice Krispies");
 	itemNames.add("Starburst");
+	itemNames.add("Haribo's");
 	
         items = new ArrayList<Items>();
-	for(int i = 0; i < 20; i ++){
-	    int rand = r.nextInt(16);
+	for(int i = 0; i < 21; i ++){
+	    int rand = r.nextInt(17);
 	    items.add(new Items(itemNames.get(rand)));
 	}
     }
