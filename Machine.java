@@ -78,12 +78,29 @@ public class Machine extends JFrame implements ActionListener{
 		    text1.setText(text1.getText() + "0");
 		}	       
 	    }
-	    if (e.getSource() == add25c) {
-		amt = amt + .25 ;
-		text2.setText("$" + amt);
-		if (text2.getText().length() == 4) {
-		  text2.setText(text1.getText() + "0");
-		}
+	}
+	if (e.getSource() == add25c) {
+	    amt = amt + 0.25 ;
+	    text2.setText("$" + amt);
+	    System.out.println(amt);
+	    if (text2.getText().length() == 4) {
+		text2.setText(text2.getText() + "0");
+	    }
+	}
+	if (e.getSource() == add1d) {
+	    amt = amt + 1.00 ;
+	    text2.setText("$" + amt);
+	    System.out.println(amt);
+	    if (text2.getText().length() == 4) {
+		text2.setText(text2.getText() + "0");
+	    }
+	}
+	if (e.getSource() == add5d) {
+	    amt = amt + 5.00 ;
+	    text2.setText("$" + amt);
+	    System.out.println(amt);
+	    if (text2.getText().length() == 4) {
+		text2.setText(text2.getText() + "0");
 	    }
 	}
     }
