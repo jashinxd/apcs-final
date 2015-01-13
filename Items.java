@@ -25,38 +25,38 @@ public class Items{
 	    stocks = s;
 	}
 	if (n.equals("Chocolate Chip Cookies")){
-	    Bprice = 1.0;
+	    Bprice = 1.00;
 	    Sprice = 1.75;
 	    stocks = s;
 	}
 	if (n.equals("Oatmeal Cookies")){
-	    Bprice = 1.0;
-	    Sprice = 1.5;
+	    Bprice = 1.00;
+	    Sprice = 1.50;
 	    stocks = s;
 	}
 	if (n.equals("Airheads")){
-	    Bprice = 0.5;
-	    Sprice = 1.0;
+	    Bprice = 0.50;
+	    Sprice = 1.00;
 	    stocks = s;
 	}
 	if (n.equals("Nacho Chips")){
-	    Bprice = 0.5;
-	    Sprice = 1.0;
+	    Bprice = 0.50;
+	    Sprice = 1.00;
 	    stocks = s;
 	}
 	if (n.equals("Granola Bar")){
 	    Bprice = 0.25;
-	    Sprice = 1.0;
+	    Sprice = 1.00;
 	    stocks = s;
 	}
 	if (n.equals("SunChips")){
 	    Bprice = 0.50;
-	    Sprice = 1.0;
+	    Sprice = 1.00;
 	    stocks = s;
 	}
 	if (n.equals("Skittles")){
 	    Bprice = 0.25;
-	    Sprice = 1.0;
+	    Sprice = 1.00;
 	    stocks = s;
 	}
 	if (n.equals("Fruit Snacks")){
@@ -71,12 +71,12 @@ public class Items{
 	}
 	if (n.equals("Chocolate Bar")){
 	    Bprice = 0.25;
-	    Sprice = 1.0;
+	    Sprice = 1.00;
 	    stocks = s;
 	}
 	if (n.equals("Graham Crackers")){
 	    Bprice = 0.50;
-	    Sprice = 1.0;
+	    Sprice = 1.00;
 	    stocks = s;
 	}
 	if (n.equals("Rice Krispies")){
