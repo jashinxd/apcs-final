@@ -1,7 +1,0 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
-    
-public class VM extends JFrame implements ActionListener {
-
-}
