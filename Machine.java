@@ -79,24 +79,39 @@ public class Machine extends JFrame implements ActionListener{
 	    }
 	}
 	if (e.getSource() == add25c) {
-	    amt = amt + 0.25 ;
-	    text2.setText("$" + amt);
-	    if (text2.getText().length() == 4) {
-		text2.setText(text2.getText() + "0");
+	    if(amt + 0.25 < 10.00){
+		amt = amt + 0.25;
+		text2.setText("$" + amt);
+		if (text2.getText().length() == 4) {
+		    text2.setText(text2.getText() + "0");
+		}
+	    }
+	    else{
+		System.out.println("Too much dough");
 	    }
 	}
 	if (e.getSource() == add1d) {
-	    amt = amt + 1.00 ;
-	    text2.setText("$" + amt);
-	    if (text2.getText().length() == 4) {
-		text2.setText(text2.getText() + "0");
+	    if(amt + 1.00 < 10.00){
+		amt = amt + 1.00 ;
+		text2.setText("$" + amt);
+		if (text2.getText().length() == 4) {
+		    text2.setText(text2.getText() + "0");
+		}
+	    }
+	    else{
+		System.out.println("Too much dough");
 	    }
 	}
 	if (e.getSource() == add5d) {
-	    amt = amt + 5.00 ;
-	    text2.setText("$" + amt);
-	    if (text2.getText().length() == 4) {
-		text2.setText(text2.getText() + "0");
+	    if(amt + 5.00 < 10.00){
+		amt = amt + 5.00 ;
+		text2.setText("$" + amt);
+		if (text2.getText().length() == 4) {
+		    text2.setText(text2.getText() + "0");
+		}
+	    }
+	    else{
+		System.out.println("Too much dough");
 	    }
 	}
     }
