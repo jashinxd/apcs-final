@@ -5,7 +5,7 @@ import java.awt.event.*;
 public class Machine extends JFrame implements ActionListener{
     private Container pane;
     private JButton[] Buttons = new JButton[20];
-    private JButton add25c, add1d, add5d; 
+    private JButton add25c, add1d, add5d, pay; 
     private double[] sprices = new double[20];
     private double amt = 0.00;
     private double prc = 0.00;
@@ -65,7 +65,10 @@ public class Machine extends JFrame implements ActionListener{
 	pane.add(add1d);
 	add5d = new JButton("Add $5.00");
 	add5d.addActionListener(this);
-	pane.add(add5d);	
+	pane.add(add5d);
+	pay = new JButton("Pay");
+	pay.addActionListener(this);
+	pane.add(pay);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -112,6 +115,16 @@ public class Machine extends JFrame implements ActionListener{
 	    }
 	    else{
 		System.out.println("Too much dough");
+	    }
+	}
+	if(e.getSource() == pay){
+	    if(amt >= prc){
+		System.out.println("Your Change is $" + (amt - prc));
+		amt = 0.00;
+		text2.setText("$" + amt + "0");
+	    }
+	    else{
+		System.out.println("You do not have enough money");
 	    }
 	}
     }
