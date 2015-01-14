@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Machine extends JFrame implements ActionListener{
+public class Machine2 extends JFrame implements ActionListener{
     private Container pane;
     private JButton[] Buttons = new JButton[20];
     private JButton add25c, add1d, add5d; 
