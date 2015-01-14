@@ -13,9 +13,6 @@ public class Machine extends JFrame implements ActionListener{
     private JPanel machine;
     private JLabel price, inserted;
     private VM jason;
-    private Timer delPrice;
-    private boolean running;
-    private int count = 0;
     
     public Machine(){
 	setTitle("Vending Machine");
@@ -74,12 +71,6 @@ public class Machine extends JFrame implements ActionListener{
 	pane.add(pay);
     }
 
-    Timer delPrice = new Timer(1000,this);
-    delPrice.setRepeats(true);
-    count = 0;
-    running = false;
-    System.out.println(timer.isRepeats());
-
     public void actionPerformed(ActionEvent e) {
 	for (int i = 0; i < 20; i++) {
 	    if (e.getSource() == Buttons[i]) {
@@ -87,17 +78,7 @@ public class Machine extends JFrame implements ActionListener{
 		prc = sprices[i];
 		if (text1.getText().length() == 4) {
 		    text1.setText(text1.getText() + "0");
-		}
-		if (!running) {
-		    delPrice.start();
-		    running = true;
-		}
-		count++;
-		if (count == 1) {
-		    del.stop();
-		    count = 0;
-		    running = false;
-		}
+		}	       
 	    }
 	}
 	if (e.getSource() == add25c) {
