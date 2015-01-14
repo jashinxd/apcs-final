@@ -5,7 +5,7 @@ import java.awt.event.*;
 public class Machine extends JFrame implements ActionListener{
     private Container pane;
     private JButton[] Buttons = new JButton[20];
-    private JButton add25c, add1d, add5d; 
+    private JButton add25c, add1d, add5d, pay; 
     private double[] sprices = new double[20];
     private double amt = 0.00;
     private double prc = 0.00;
@@ -68,7 +68,10 @@ public class Machine extends JFrame implements ActionListener{
 	pane.add(add1d);
 	add5d = new JButton("Add $5.00");
 	add5d.addActionListener(this);
-	pane.add(add5d);	
+	pane.add(add5d);
+	pay = new JButton("Pay");
+	pay.addActionListener(this);
+	pane.add(pay);
     }
 
     Timer delPrice = new Timer(1000,this);
@@ -98,24 +101,49 @@ public class Machine extends JFrame implements ActionListener{
 	    }
 	}
 	if (e.getSource() == add25c) {
-	    amt = amt + 0.25 ;
-	    text2.setText("$" + amt);
-	    if (text2.getText().length() == 4) {
-		text2.setText(text2.getText() + "0");
+	    if(amt + 0.25 < 10.00){
+		amt = amt + 0.25;
+		text2.setText("$" + amt);
+		if (text2.getText().length() == 4) {
+		    text2.setText(text2.getText() + "0");
+		}
+	    }
+	    else{
+		System.out.println("Too much dough");
 	    }
 	}
 	if (e.getSource() == add1d) {
-	    amt = amt + 1.00 ;
-	    text2.setText("$" + amt);
-	    if (text2.getText().length() == 4) {
-		text2.setText(text2.getText() + "0");
+	    if(amt + 1.00 < 10.00){
+		amt = amt + 1.00 ;
+		text2.setText("$" + amt);
+		if (text2.getText().length() == 4) {
+		    text2.setText(text2.getText() + "0");
+		}
+	    }
+	    else{
+		System.out.println("Too much dough");
 	    }
 	}
 	if (e.getSource() == add5d) {
-	    amt = amt + 5.00 ;
-	    text2.setText("$" + amt);
-	    if (text2.getText().length() == 4) {
-		text2.setText(text2.getText() + "0");
+	    if(amt + 5.00 < 10.00){
+		amt = amt + 5.00 ;
+		text2.setText("$" + amt);
+		if (text2.getText().length() == 4) {
+		    text2.setText(text2.getText() + "0");
+		}
+	    }
+	    else{
+		System.out.println("Too much dough");
+	    }
+	}
+	if(e.getSource() == pay){
+	    if(amt >= prc){
+		System.out.println("Your Change is $" + (amt - prc));
+		amt = 0.00;
+		text2.setText("$" + amt + "0");
+	    }
+	    else{
+		System.out.println("You do not have enough money");
 	    }
 	}
     }
