@@ -2,7 +2,9 @@ import java.io.*;
 import java.util.*;
 public class Items{
     private String name;
+    // prices that items are bought at
     private double Bprice;
+    // price that items are sold for in the vending machine
     private double Sprice;
     private int stocks;
     public Items(String n){

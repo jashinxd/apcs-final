@@ -1,27 +1,26 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
 public class Machine extends JFrame implements ActionListener{
     private Container pane;
     private JButton[] Buttons = new JButton[20];
-    private JButton add25c, add1d, add5d, pay; 
+    private JButton add25c, add1d, add5d, pay;
     private double[] sprices = new double[20];
+    //amount inserted into the machine
     private double amt = 0.00;
+    //price of item on displayed on vendind machine
     private double prc = 0.00;
     private JTextArea text1, text2;
     private JPanel machine;
     private JLabel price, inserted;
     private VM jason;
-    
     public Machine(){
 	setTitle("Vending Machine");
 	setSize(600,600);
 	setLocation(500,200);
-	setDefaultCloseOperation(EXIT_ON_CLOSE);	
+	setDefaultCloseOperation(EXIT_ON_CLOSE);
 	pane = getContentPane();
 	pane.setLayout(new FlowLayout());
-
 	price = new JLabel("Price:");
 	pane.add(price);
 	text1 = new JTextArea();
@@ -31,7 +30,6 @@ public class Machine extends JFrame implements ActionListener{
 	//text1.setBackground(Color.BLACK);
 	text1.setBorder(BorderFactory.createLineBorder(Color.red,2));
 	pane.add(text1);
-
 	inserted = new JLabel("Amt Inserted");
 	pane.add(inserted);
 	text2 = new JTextArea("$0.00");
@@ -40,7 +38,6 @@ public class Machine extends JFrame implements ActionListener{
 	text2.setEditable(false);
 	text2.setBorder(BorderFactory.createLineBorder(Color.red,2));
 	pane.add(text2);
-
 	//Buttons for Items
 	JPanel machine = new JPanel();
 	machine.setLayout(new GridLayout(10,2));
@@ -55,7 +52,6 @@ public class Machine extends JFrame implements ActionListener{
 	//machine.setSize(600,600);
 	machine.setBorder(BorderFactory.createLineBorder(Color.blue,2));
 	pane.add(machine);
-
 	//Buttons to Insert Money
 	add25c = new JButton("Add $0.25");
 	add25c.addActionListener(this);
@@ -70,7 +66,6 @@ public class Machine extends JFrame implements ActionListener{
 	pay.addActionListener(this);
 	pane.add(pay);
     }
-
     public void actionPerformed(ActionEvent e) {
 	for (int i = 0; i < 20; i++) {
 	    if (e.getSource() == Buttons[i]) {
@@ -78,7 +73,7 @@ public class Machine extends JFrame implements ActionListener{
 		prc = sprices[i];
 		if (text1.getText().length() == 4) {
 		    text1.setText(text1.getText() + "0");
-		}	       
+		}
 	    }
 	}
 	if (e.getSource() == add25c) {
@@ -128,7 +123,6 @@ public class Machine extends JFrame implements ActionListener{
 	    }
 	}
     }
-
     public static void main(String[] args){
 	Machine a = new Machine();
 	a.setVisible(true);
