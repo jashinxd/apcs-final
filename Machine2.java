@@ -9,15 +9,12 @@ public class Machine2 extends JFrame implements ActionListener{
     private double[] sprices = new double[20];
     private double amt = 0.00;
     private double prc = 0.00;
-    private JTextArea text1, text2;
+    private JTextArea text1, text2, status;
     private JPanel machine;
     private JLabel price, inserted;
     private VM jason;
-    private Timer delPrice;
-    private boolean running;
-    private int count = 0;
     
-    public Machine(){
+    public Machine2(){
 	setTitle("Vending Machine");
 	setSize(600,600);
 	setLocation(500,200);
@@ -55,6 +52,7 @@ public class Machine2 extends JFrame implements ActionListener{
 	    machine.add(Buttons[i]);
 	    Buttons[i].addActionListener(this);
 	}
+	
 	//machine.setSize(600,600);
 	machine.setBorder(BorderFactory.createLineBorder(Color.blue,2));
 	pane.add(machine);
@@ -68,15 +66,16 @@ public class Machine2 extends JFrame implements ActionListener{
 	pane.add(add1d);
 	add5d = new JButton("Add $5.00");
 	add5d.addActionListener(this);
-	pane.add(add5d);	
-    }
+	pane.add(add5d);
 
-    Timer delPrice = new Timer(1000,this);
-    delPrice.setRepeats(true);
-    count = 0;
-    running = false;
-    System.out.println(timer.isRepeats());
-
+	status = new JTextArea();
+	status.setColumns(10);
+	status.setRows(1);
+	status.setEditable(false);
+	status.setBorder(BorderFactory.createLineBorder(Color.red,2));
+	pane.add(status);
+    } 
+	
     public void actionPerformed(ActionEvent e) {
 	for (int i = 0; i < 20; i++) {
 	    if (e.getSource() == Buttons[i]) {
@@ -85,16 +84,10 @@ public class Machine2 extends JFrame implements ActionListener{
 		if (text1.getText().length() == 4) {
 		    text1.setText(text1.getText() + "0");
 		}
-		if (!running) {
-		    delPrice.start();
-		    running = true;
-		}
-		count++;
-		if (count == 1) {
-		    del.stop();
-		    count = 0;
-		    running = false;
-		}
+		try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException exception) {}
+		text1.setText("");
 	    }
 	}
 	if (e.getSource() == add25c) {
