@@ -6,13 +6,14 @@ public class Machine extends JFrame implements ActionListener{
     private JButton[] Buttons = new JButton[20];
     private JButton add25c, add1d, add5d, pay;
     private double[] sprices = new double[20];
+    private int[] stocks = new int[20];
     //amount inserted into the machine
     private double amt = 0.00;
     //price of item on displayed on vendind machine
     private double prc = 0.00;
-    private JTextArea text1, text2;
+    private JTextArea text1,text2,text3;
     private JPanel machine;
-    private JLabel price, inserted;
+    private JLabel price, inserted,Stock;
     private VM jason;
     public Machine(){
 	setTitle("Vending Machine");
@@ -24,7 +25,7 @@ public class Machine extends JFrame implements ActionListener{
 	price = new JLabel("Price:");
 	pane.add(price);
 	text1 = new JTextArea();
-	text1.setColumns(10);
+	text1.setColumns(5);
 	text1.setRows(1);
 	text1.setEditable(false);
 	//text1.setBackground(Color.BLACK);
@@ -33,11 +34,19 @@ public class Machine extends JFrame implements ActionListener{
 	inserted = new JLabel("Amt Inserted");
 	pane.add(inserted);
 	text2 = new JTextArea("$0.00");
-	text2.setColumns(10);
+	text2.setColumns(5);
 	text2.setRows(1);
 	text2.setEditable(false);
 	text2.setBorder(BorderFactory.createLineBorder(Color.red,2));
 	pane.add(text2);
+	Stock = new JLabel("Stocks Left");
+	text3 = new JTextArea("0");
+	text3.setColumns(5);
+	text3.setRows(1);
+	text3.setEditable(false);
+	text3.setBorder(BorderFactory.createLineBorder(Color.red,2));
+	pane.add(Stock);
+	pane.add(text3);
 	//Buttons for Items
 	JPanel machine = new JPanel();
 	machine.setLayout(new GridLayout(10,2));
@@ -45,6 +54,7 @@ public class Machine extends JFrame implements ActionListener{
 	for(int i = 0;i<20;i ++){
 	    Buttons[i] = new JButton(jason.getItems().get(i).getname());
 	    sprices[i] = jason.getItems().get(i).getsprice();
+	    stocks[i] = jason.getItems().get(i).getstocks();
 	    Buttons[i].setPreferredSize(new Dimension(250,30));
 	    machine.add(Buttons[i]);
 	    Buttons[i].addActionListener(this);
@@ -70,6 +80,7 @@ public class Machine extends JFrame implements ActionListener{
 	for (int i = 0; i < 20; i++) {
 	    if (e.getSource() == Buttons[i]) {
 		text1.setText("$"+sprices[i]);
+		text3.setText("" + stocks[i]);
 		prc = sprices[i];
 		if (text1.getText().length() == 4) {
 		    text1.setText(text1.getText() + "0");
