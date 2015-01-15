@@ -9,9 +9,9 @@ public class Machine2 extends JFrame implements ActionListener{
     private double[] sprices = new double[20];
     private double amt = 0.00;
     private double prc = 0.00;
-    private JTextArea text1, text2, status;
+    private JTextArea text1, text2, response;
     private JPanel machine;
-    private JLabel price, inserted;
+    private JLabel price, inserted, status;
     private VM jason;
     
     public Machine2(){
@@ -68,12 +68,15 @@ public class Machine2 extends JFrame implements ActionListener{
 	add5d.addActionListener(this);
 	pane.add(add5d);
 
-	status = new JTextArea();
-	status.setColumns(10);
-	status.setRows(1);
-	status.setEditable(false);
-	status.setBorder(BorderFactory.createLineBorder(Color.red,2));
+	status = new JLabel("Status:");
 	pane.add(status);
+	response = new JTextArea();
+	response.setColumns(10);
+	response.setRows(10);
+	response.setEditable(false);
+	response.setBorder(BorderFactory.createLineBorder(Color.red,2));
+	pane.add(response);
+	
     } 
 	
     public void actionPerformed(ActionEvent e) {
