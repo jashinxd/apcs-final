@@ -25,7 +25,9 @@ public class VM {
 	itemNames.add("Haribo's");
 	
         items = new ArrayList<Items>();
-	for(int i = 0; i < 21; i ++){
+	//adds the items into the arraylist for later use
+	//The Items are random and CAN repeat, like a real vending machine
+	for(int i = 0; i < 20; i ++){
 	    int rand = r.nextInt(17);
 	    items.add(new Items(itemNames.get(rand)));
 	}
@@ -33,10 +35,4 @@ public class VM {
     public ArrayList<Items> getItems(){
 	    return items;
 	} 
-    /* public static void main(String[] args) {
-	VM a = new VM();
-	for(int i = 0; i < 20; i ++){
-	    System.out.println(a.getItems().get(i).getname()+":"+a.getItems().get(i).getstocks() + "-"+ a.getItems().get(i).getsprice() +"/" + a.getItems().get(i).getbprice());
-	}
-	}*/
 }
