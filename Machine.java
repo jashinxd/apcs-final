@@ -85,7 +85,7 @@ public class Machine extends JFrame implements ActionListener{
 		}
 	    }
 	    else{
-		System.out.println("Too much dough");
+		System.out.println("Machine does not take more than $10");
 	    }
 	}
 	if (e.getSource() == add1d) {
@@ -97,7 +97,7 @@ public class Machine extends JFrame implements ActionListener{
 		}
 	    }
 	    else{
-		System.out.println("Too much dough");
+		System.out.println("Machine does not take more than $10");
 	    }
 	}
 	if (e.getSource() == add5d) {
@@ -109,7 +109,7 @@ public class Machine extends JFrame implements ActionListener{
 		}
 	    }
 	    else{
-		System.out.println("Too much dough");
+		System.out.println("Machine does not take more than $10");
 	    }
 	}
 	if(e.getSource() == pay){
