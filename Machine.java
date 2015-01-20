@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.*;
 public class Machine extends JFrame implements ActionListener{
     private Container pane;
     private JButton[] Buttons = new JButton[20];
@@ -77,15 +78,13 @@ public class Machine extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
 	for (int i = 0; i < 20; i++) {
 	    if (e.getSource() == Buttons[i]) {
-		if(amt == 0.00){
-		    text1.setText("$"+sprices[i]);
-		    text3.setText("" + stocks[i]);
-		    prc = sprices[i];
-		    if (text1.getText().length() == 4) {
-			text1.setText(text1.getText() + "0");
-		    }
+		prc = sprices[i];
+		text3.setText("" + stocks[i]);
+		text1.setText("$"+sprices[i]);
+		if (text1.getText().length() == 4) {
+		    text1.setText(text1.getText() + "0");
 		}
-		else if (amt < prc){
+	        if (amt < prc){
 		    
 		    System.out.println("You do not have enough money, you need $" + (prc - amt) + " more"); 
 		}
