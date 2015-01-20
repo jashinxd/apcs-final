@@ -91,6 +91,7 @@ public class Machine extends JFrame implements ActionListener{
 		prc = sprices[i];
 		text3.setText("" + stocks[i]);
 		text1.setText("$"+sprices[i]);
+		// adds extra 0 for displaying purposes
 		if (text1.getText().length() == 4) {
 		    text1.setText(text1.getText() + "0");
 		}
@@ -102,16 +103,19 @@ public class Machine extends JFrame implements ActionListener{
 		    stocks[i] = stocks[i] -1;
 		    text3.setText("" + stocks[i]);
 		    response.setText("Your change is $" + (amt - prc));
+		    // See L94
 		    if (response.getText().length() == 19) {
 			response.setText(response.getText() + "0");
 		    }
 		    amt = 0.00;
 		    prc = 0.00;
 		    text1.setText("$" + prc);
+		    // See L94
 		    if (text1.getText().length() == 4) {
 			text1.setText(text1.getText() + "0");
 		    }
 		    text2.setText("$" + amt);
+		    // See L94
 		    if (text2.getText().length() == 4) {
 			text2.setText(text2.getText() + "0");
 		    }
@@ -125,6 +129,7 @@ public class Machine extends JFrame implements ActionListener{
 	    if(amt + 0.25 < 10.00){
 		amt = amt + 0.25;
 		text2.setText("$" + amt);
+		// See L94
 		if (text2.getText().length() == 4) {
 		    text2.setText(text2.getText() + "0");
 		}
@@ -137,6 +142,7 @@ public class Machine extends JFrame implements ActionListener{
 	    if(amt + 1.00 < 10.00){
 		amt = amt + 1.00 ;
 		text2.setText("$" + amt);
+		// See L94
 		if (text2.getText().length() == 4) {
 		    text2.setText(text2.getText() + "0");
 		}
@@ -148,6 +154,7 @@ public class Machine extends JFrame implements ActionListener{
 	if (e.getSource() == add5d) {
 	    if(amt + 5.00 < 10.00){
 		amt = amt + 5.00 ;
+		// See L94
 		text2.setText("$" + amt);
 		if (text2.getText().length() == 4) {
 		    text2.setText(text2.getText() + "0");
