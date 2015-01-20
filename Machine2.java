@@ -75,6 +75,13 @@ public class Machine2 extends JFrame implements ActionListener{
 	response.setRows(10);
 	response.setEditable(false);
 	response.setBorder(BorderFactory.createLineBorder(Color.red,2));
+	pane.add(response);	status = new JLabel("Status:");
+	pane.add(status);
+	response = new JTextArea();
+	response.setColumns(10);
+	response.setRows(10);
+	response.setEditable(false);
+	response.setBorder(BorderFactory.createLineBorder(Color.red,2));
 	pane.add(response);
 	
     } 

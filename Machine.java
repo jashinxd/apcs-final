@@ -13,9 +13,9 @@ public class Machine extends JFrame implements ActionListener{
     //price of item on displayed on vendind machine
     private double prc = 0.00;
     private double change = 0.00;
-    private JTextArea text1,text2,text3;
+    private JTextArea text1,text2,text3, response;
     private JPanel machine;
-    private JLabel price, inserted,Stock;
+    private JLabel price, inserted, status, Stock;
     private VM jason;
     public Machine(){
 	setTitle("Vending Machine");
@@ -74,6 +74,16 @@ public class Machine extends JFrame implements ActionListener{
 	add5d = new JButton("Add $5.00");
 	add5d.addActionListener(this);
 	pane.add(add5d);
+
+	//Change and Messages
+	//status = new JLabel("Status:");
+	//pane.add(status);
+	response = new JTextArea();
+	response.setColumns(25);
+	response.setRows(1);
+	response.setEditable(false);
+	response.setBorder(BorderFactory.createLineBorder(Color.red,2));
+	pane.add(response);
     }
     public void actionPerformed(ActionEvent e) {
 	for (int i = 0; i < 20; i++) {
@@ -86,7 +96,7 @@ public class Machine extends JFrame implements ActionListener{
 		}
 	        if (amt < prc){
 		    
-		    System.out.println("You do not have enough money, you need $" + (prc - amt) + " more"); 
+		    response.setText("You do not have enough money, you need $" + (prc - amt) + " more"); 
 		}
 		else if(amt >= prc && stocks[i] > 0){
 		    stocks[i] = stocks[i] -1;
@@ -98,7 +108,7 @@ public class Machine extends JFrame implements ActionListener{
 		    text2.setText("$" + amt);
 		}
 		else{
-		    System.out.println("there are no more stocks");
+		    response.setText("there are no more stocks");
 		}
 	    }
 	}
@@ -111,7 +121,7 @@ public class Machine extends JFrame implements ActionListener{
 		}
 	    }
 	    else{
-		System.out.println("Machine does not take more than $10");
+		response.setText("Machine does not take more than $10");
 	    }
 	}
 	if (e.getSource() == add1d) {
