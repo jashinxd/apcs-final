@@ -5,7 +5,7 @@ import java.util.*;
 public class Machine extends JFrame implements ActionListener{
     private Container pane;
     private JButton[] Buttons = new JButton[20];
-    private JButton add25c, add1d, add5d, pay;
+    private JButton add25c, add1d, add5d, replenish;
     private double[] sprices = new double[20];
     private int[] stocks = new int[20];
     //amount inserted into the machine
@@ -74,6 +74,9 @@ public class Machine extends JFrame implements ActionListener{
 	add5d = new JButton("Add $5.00");
 	add5d.addActionListener(this);
 	pane.add(add5d);
+	replenish = new JButton("Replenish Stock");
+        replenish.addActionListener(this);
+	pane.add(replenish);
 
 	//Change and Messages
 	//status = new JLabel("Status:");
@@ -148,7 +151,7 @@ public class Machine extends JFrame implements ActionListener{
 		}
 	    }
 	    else{
-		System.out.println("Machine does not take more than $10");
+	        response.setText("Machine does not take more than $10");
 	    }
 	}
 	if (e.getSource() == add5d) {
@@ -161,8 +164,19 @@ public class Machine extends JFrame implements ActionListener{
 		}
 	    }
 	    else{
-		System.out.println("Machine does not take more than $10");
+	        response.setText("Machine does not take more than $10");
 	    }
+	}
+	if(e.getSource() == replenish){
+	    Random r = new Random();
+	    int compare = 0;
+	    for(int i = 0; i < stocks.length; i ++){
+		compare = r.nextInt(15) + 1;
+		if(compare > stocks[i]){
+		    stocks[i] = compare;
+		}
+	    }
+	    response.setText("Stocks replenished");
 	}
     }
     public static void main(String[] args){
