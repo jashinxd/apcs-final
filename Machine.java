@@ -7,15 +7,17 @@ public class Machine extends JFrame implements ActionListener{
     private JButton[] Buttons = new JButton[20];
     private JButton add25c, add1d, add5d, replenish;
     private double[] sprices = new double[20];
+    private double[] profit = new double[20];
     private int[] stocks = new int[20];
     //amount inserted into the machine
     private double amt = 0.00;
     //price of item on displayed on vendind machine
     private double prc = 0.00;
     private double change = 0.00;
-    private JTextArea text1,text2,text3, response;
+    private double earn = 0.00;
+    private JTextArea text1,text2,text3,response,earning;
     private JPanel machine;
-    private JLabel price, inserted, Stock;
+    private JLabel price, inserted, Stock,ProfitMade;
     private VM jason;
     
     public Machine(){
@@ -25,7 +27,7 @@ public class Machine extends JFrame implements ActionListener{
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
 	
 	pane = getContentPane();
-	pane.setLayout(new SpringLayout());
+	pane.setLayout(new FlowLayout());
 	
 	price = new JLabel("Price:");
 	pane.add(price);	
@@ -54,6 +56,7 @@ public class Machine extends JFrame implements ActionListener{
 	pane.add(Stock);
 	pane.add(text3);
 
+
 	//Buttons for Items
 	JPanel machine = new JPanel();
 	machine.setLayout(new GridLayout(10,2));
@@ -61,6 +64,7 @@ public class Machine extends JFrame implements ActionListener{
 	for(int i = 0;i<20;i ++){
 	    Buttons[i] = new JButton(jason.getItems().get(i).getname());
 	    sprices[i] = jason.getItems().get(i).getsprice();
+	    profit[i] = sprices[i] - jason.getItems().get(i).getbprice();
 	    stocks[i] = jason.getItems().get(i).getstocks();
 	    Buttons[i].setPreferredSize(new Dimension(250,30));
 	    machine.add(Buttons[i]);
@@ -91,13 +95,25 @@ public class Machine extends JFrame implements ActionListener{
 	response.setEditable(false);
 	response.setBorder(BorderFactory.createLineBorder(Color.red,2));
 	pane.add(response);
+
+	ProfitMade = new JLabel("Profit Made");
+	earning = new JTextArea("$0.00");
+	earning.setColumns(5);
+	earning.setRows(1);
+	earning.setEditable(false);
+        earning.setBorder(BorderFactory.createLineBorder(Color.red,2));
+	pane.add(ProfitMade);
+	pane.add(earning);
+	
     }
     public void actionPerformed(ActionEvent e) {
 	for (int i = 0; i < 20; i++) {
 	    if (e.getSource() == Buttons[i]) {
 		prc = sprices[i];
+		earn = earn + profit[i];
 		text3.setText("" + stocks[i]);
 		text1.setText("$"+sprices[i]);
+		earning.setText("$" + earn);
 		response.setText("");
 		// adds extra 0 for displaying purposes
 		if (text1.getText().length() == 4) {
