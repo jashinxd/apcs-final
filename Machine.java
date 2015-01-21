@@ -15,24 +15,27 @@ public class Machine extends JFrame implements ActionListener{
     private double change = 0.00;
     private JTextArea text1,text2,text3, response;
     private JPanel machine;
-    private JLabel price, inserted, status, Stock;
+    private JLabel price, inserted, Stock;
     private VM jason;
+    
     public Machine(){
 	setTitle("Vending Machine");
 	setSize(600,600);
 	setLocation(500,200);
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
+	
 	pane = getContentPane();
-	pane.setLayout(new FlowLayout());
+	pane.setLayout(new SpringLayout());
+	
 	price = new JLabel("Price:");
-	pane.add(price);
+	pane.add(price);	
 	text1 = new JTextArea();
 	text1.setColumns(5);
 	text1.setRows(1);
 	text1.setEditable(false);
-	//text1.setBackground(Color.BLACK);
-	text1.setBorder(BorderFactory.createLineBorder(Color.red,2));
+       	text1.setBorder(BorderFactory.createLineBorder(Color.red,2));
 	pane.add(text1);
+
 	inserted = new JLabel("Amt Inserted");
 	pane.add(inserted);
 	text2 = new JTextArea("$0.00");
@@ -41,6 +44,7 @@ public class Machine extends JFrame implements ActionListener{
 	text2.setEditable(false);
 	text2.setBorder(BorderFactory.createLineBorder(Color.red,2));
 	pane.add(text2);
+
 	Stock = new JLabel("Stocks Left");
 	text3 = new JTextArea("0");
 	text3.setColumns(5);
@@ -49,6 +53,7 @@ public class Machine extends JFrame implements ActionListener{
 	text3.setBorder(BorderFactory.createLineBorder(Color.red,2));
 	pane.add(Stock);
 	pane.add(text3);
+
 	//Buttons for Items
 	JPanel machine = new JPanel();
 	machine.setLayout(new GridLayout(10,2));
@@ -61,9 +66,10 @@ public class Machine extends JFrame implements ActionListener{
 	    machine.add(Buttons[i]);
 	    Buttons[i].addActionListener(this);
 	}
-	//machine.setSize(600,600);
+
 	machine.setBorder(BorderFactory.createLineBorder(Color.blue,2));
 	pane.add(machine);
+
 	//Buttons to Insert Money
 	add25c = new JButton("Add $0.25");
 	add25c.addActionListener(this);
@@ -79,8 +85,6 @@ public class Machine extends JFrame implements ActionListener{
 	pane.add(replenish);
 
 	//Change and Messages
-	//status = new JLabel("Status:");
-	//pane.add(status);
 	response = new JTextArea();
 	response.setColumns(25);
 	response.setRows(1);
@@ -94,6 +98,7 @@ public class Machine extends JFrame implements ActionListener{
 		prc = sprices[i];
 		text3.setText("" + stocks[i]);
 		text1.setText("$"+sprices[i]);
+		response.setText("");
 		// adds extra 0 for displaying purposes
 		if (text1.getText().length() == 4) {
 		    text1.setText(text1.getText() + "0");
