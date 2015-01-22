@@ -1,8 +1,8 @@
 Vending Machine
 ==========
 
-Pd. 1
-Jason Shin, Shi Shu<br>
+Pd. 1<br>
+Jason Shin, Shi Shu<br><br>
 What our project does<br>
 Our project is a vending machine. You can use it to kill time or procrastinate. The vending machine generates random items with random stocks, you can choose the amount that you pay and and you get the change back. At the end of the day, you can check to see how much money the vending machine made, and if it ever runs out of stocks for a certain item, you can replenish.<br><br><br>
 How to use our project<br>
