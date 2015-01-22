@@ -21,3 +21,4 @@ Changelog
   1/13/15 - Finished Buttons to add money, and no more than $9.75 can be inserted<br>
   1/14/15 - Machine2 with timer attempt added<br>
   1/20/15 - Improved payment method, added textbox for change
+  1/21/15 - Added profit to Machine
