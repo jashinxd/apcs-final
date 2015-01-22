@@ -4,7 +4,7 @@ Vending Machine
 Pd. 1
 Jason Shin, Shi Shu<br>
 What our project does<br>
-Our project is a vending machine. You can use it to kill time or procrastinate. The vending machine generates random items with random stocks, you can choose the amount that you pay and and you get the change back. At the end of the day, you can check to see how much money the vending machine made, and if it ever runs out of stocks for a certain item, you can replenish.<br>
+Our project is a vending machine. You can use it to kill time or procrastinate. The vending machine generates random items with random stocks, you can choose the amount that you pay and and you get the change back. At the end of the day, you can check to see how much money the vending machine made, and if it ever runs out of stocks for a certain item, you can replenish.
 ==========
 How to use our project<br>
 1. Clicking on the items without inserting any money allows you to see check the price of an item, however, if you insert money and press the button, you will buy the item if you've inserted enough money. However, suppose you didn't insert enough, a message will pop up telling u how much more money you need and your money will stay in the machine.<br>
