@@ -9,7 +9,8 @@ public class Items{
     private int stocks;
     public Items(String n){
 	Random r = new Random();
-	int s = r.nextInt(15) + 1;
+	//Items will have at least 5 stocks initially
+	int s = r.nextInt(11) + 5;
 	name = n;
 	if (n.equals("Beef Jerky")){
 	    Bprice = 1.00;

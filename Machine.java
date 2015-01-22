@@ -198,8 +198,9 @@ public class Machine extends JFrame implements ActionListener{
 	if(e.getSource() == replenish){
 	    Random r = new Random();
 	    int compare = 0;
+	    //stocks replenish only if the random is greater than current stock
 	    for(int i = 0; i < stocks.length; i ++){
-		compare = r.nextInt(15) + 1;
+		compare = r.nextInt(11) + 5;
 		if(compare > stocks[i]){
 		    stocks[i] = compare;
 		}
