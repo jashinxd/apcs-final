@@ -8,7 +8,7 @@ Our project is a vending machine. You can use it to kill time or procrastinate. 
 How to use our project<br>
 1. Clicking on the items without inserting any money allows you to see check the price of an item, however, if you insert money and press the button, you will buy the item if you've inserted enough money. However, suppose you didn't insert enough, a message will pop up telling u how much more money you need and your money will stay in the machine.<br>
 2. The items all have stocks, and that means when you run out of a certain item, you cannot buy it anymore, until the stocks are replenished<br>
-3. The Replenish Stock button replenishes a random amount to the stocks from 0-15, this replenishes ALL the items' stocks<br>
+3. The Replenish Stock button replenishes a random amount to the stocks from 0-15, this replenishes ALL the items' stocks. The stocks only replenish if the random int is greater than current stocks. This is because items that are already pretty stocked don't need to be replenished most of the time. Even if they are replenished, they will only increase by a small amount.<br>
 4. When you pay, you can choose to insert the amount of money you want to insert, just like normal vending machines, this vending machine accepts only quarters, dollar bills, and 5 dollar bills. There is also a cap of $9.75 for amount inserted, if you try to insert more, the machine simply wouldn't accept your money.<br>
 5. The labels and the textboxes should be self-explanatory with the labels, the long white textbox on the bottom is the message box.<br>
 Changelog
