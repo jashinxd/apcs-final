@@ -27,3 +27,4 @@ Changelog
   1/14/15 - Machine2 with timer attempt added<br>
   1/20/15 - Improved payment method, added textbox for change
   1/21/15 - Added profit to Machine
+  1/22/15 - Improved replenishing, changed initial stock amount, resizeable set to false 
