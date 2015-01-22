@@ -24,6 +24,7 @@ public class Machine extends JFrame implements ActionListener{
 	setTitle("Vending Machine");
 	setSize(600,600);
 	setLocation(500,200);
+	setResizable(false);
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
 	
 	pane = getContentPane();
