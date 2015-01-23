@@ -29,7 +29,8 @@ public class Machine extends JFrame implements ActionListener{
 	
 	pane = getContentPane();
 	pane.setLayout(new FlowLayout());
-	
+
+	//Displays the price of the item clicked on
 	price = new JLabel("Price:");
 	pane.add(price);	
 	text1 = new JTextArea();
@@ -39,6 +40,7 @@ public class Machine extends JFrame implements ActionListener{
        	text1.setBorder(BorderFactory.createLineBorder(Color.red,2));
 	pane.add(text1);
 
+	//Displays the amount inserted
 	inserted = new JLabel("Amt Inserted");
 	pane.add(inserted);
 	text2 = new JTextArea("$0.00");
@@ -48,6 +50,7 @@ public class Machine extends JFrame implements ActionListener{
 	text2.setBorder(BorderFactory.createLineBorder(Color.red,2));
 	pane.add(text2);
 
+	//Displays number of items left in the machine
 	Stock = new JLabel("Stocks Left");
 	text3 = new JTextArea("0");
 	text3.setColumns(5);
@@ -100,6 +103,7 @@ public class Machine extends JFrame implements ActionListener{
 	response.setBorder(BorderFactory.createLineBorder(Color.red,2));
 	pane.add(response);
 
+	//Profit made by machine
 	ProfitMade = new JLabel("Profit Made");
 	earning = new JTextArea("$0.00");
 	earning.setColumns(5);
@@ -137,19 +141,19 @@ public class Machine extends JFrame implements ActionListener{
 		    if(earning.getText().substring(len - 2, len - 1).equals(".")){
 			earning.setText(earning.getText() + "0");
 		    }
-		    // See L116
+		    // See L124
 		    if (response.getText().length() == 19) {
 			response.setText(response.getText() + "0");
 		    }
 		    amt = 0.00;
 		    prc = 0.00;
 		    text1.setText("$" + prc);
-		    // See L116
+		    // See L124
 		    if (text1.getText().length() == 4) {
 			text1.setText(text1.getText() + "0");
 		    }
 		    text2.setText("$" + amt);
-		    // See L116
+		    // See L124
 		    if (text2.getText().length() == 4) {
 			text2.setText(text2.getText() + "0");
 		    }
@@ -163,7 +167,7 @@ public class Machine extends JFrame implements ActionListener{
 	    if(amt + 0.25 < 10.00){
 		amt = amt + 0.25;
 		text2.setText("$" + amt);
-		// See L94
+		// See L124
 		if (text2.getText().length() == 4) {
 		    text2.setText(text2.getText() + "0");
 		}
@@ -176,7 +180,7 @@ public class Machine extends JFrame implements ActionListener{
 	    if(amt + 1.00 < 10.00){
 		amt = amt + 1.00 ;
 		text2.setText("$" + amt);
-		// See L116
+		// See L124
 		if (text2.getText().length() == 4) {
 		    text2.setText(text2.getText() + "0");
 		}
@@ -201,7 +205,7 @@ public class Machine extends JFrame implements ActionListener{
 	if(e.getSource() == replenish){
 	    Random r = new Random();
 	    int compare = 0;
-	    //stocks replenish only if the random is greater than current stock
+	    //Stocks replenish only if the random is greater than current stock
 	    for(int i = 0; i < stocks.length; i ++){
 		compare = r.nextInt(11) + 5;
 		if(compare > stocks[i]){
@@ -210,6 +214,7 @@ public class Machine extends JFrame implements ActionListener{
 	    }
 	    response.setText("Stocks replenished");
 	}
+	//Resets the profit
 	if(e.getSource() == reset){
 	    earn = 0.00;
 	    earning.setText("$" + earn + "0");
