@@ -227,13 +227,15 @@ public class Machine extends JFrame implements ActionListener{
 	    int rand = 0;
 	    for(int i = 0; i < 20; i ++){
 		rand = r.nextInt(20);
-		stocks[rand] = stocks[rand] - 1;
-		earn = earn + profit[rand];
-		earning.setText("$" + earn);
-		//Aesthetic reasons
-		int len = earning.getText().length();
-		if(earning.getText().substring(len - 2, len - 1).equals(".")){
-		    earning.setText(earning.getText() + "0");
+		if(stocks[rand] > 0){
+		    stocks[rand] = stocks[rand] - 1;
+		    earn = earn + profit[rand];
+		    earning.setText("$" + earn);
+		    //Aesthetic reasons
+		    int len = earning.getText().length();
+		    if(earning.getText().substring(len - 2, len - 1).equals(".")){
+			earning.setText(earning.getText() + "0");
+		    }
 		}
 	    }
 	}
