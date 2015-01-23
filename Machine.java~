@@ -5,7 +5,7 @@ import java.util.*;
 public class Machine extends JFrame implements ActionListener{
     private Container pane;
     private JButton[] Buttons = new JButton[20];
-    private JButton add25c, add1d, add5d, replenish,reset;
+    private JButton add25c, add1d, add5d, replenish;
     private double[] sprices = new double[20];
     private double[] profit = new double[20];
     private int[] stocks = new int[20];
@@ -75,7 +75,7 @@ public class Machine extends JFrame implements ActionListener{
 	machine.setBorder(BorderFactory.createLineBorder(Color.blue,2));
 	pane.add(machine);
 
-	//Buttons to Insert Money,replenish,and profit
+	//Buttons to Insert Money
 	add25c = new JButton("Add $0.25");
 	add25c.addActionListener(this);
 	pane.add(add25c);
@@ -88,9 +88,6 @@ public class Machine extends JFrame implements ActionListener{
 	replenish = new JButton("Replenish Stock");
         replenish.addActionListener(this);
 	pane.add(replenish);
-	reset = new JButton("Reset Profit");
-	reset.addActionListener(this);
-	pane.add(reset);
 
 	//Change and Messages
 	response = new JTextArea();
@@ -209,10 +206,6 @@ public class Machine extends JFrame implements ActionListener{
 		}
 	    }
 	    response.setText("Stocks replenished");
-	}
-	if(e.getSource() == reset){
-	    earn = 0.00;
-	    earning.setText("$" + earn + "0");
 	}
     }
     public static void main(String[] args){
