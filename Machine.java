@@ -225,7 +225,10 @@ public class Machine extends JFrame implements ActionListener{
 	if(e.getSource() == simulate){
 	    Random r = new Random();
 	    int rand = 0;
-	    for(int i = 0; i < 20; i ++){
+	    int randNum = 0;
+	    int numPeople = 0;
+	    randNum = r.nextInt(10) + 10;
+	    for(int i = 0; i < randNum; i ++){
 		rand = r.nextInt(20);
 		//Will buy only if there are stocks left
 		if(stocks[rand] > 0){
@@ -237,7 +240,13 @@ public class Machine extends JFrame implements ActionListener{
 		    if(earning.getText().substring(len - 2, len - 1).equals(".")){
 			earning.setText(earning.getText() + "0");
 		    }
+		    numPeople = numPeople + 1;
 		}
+	    }
+	    if (numPeople == 0) {
+		response.setText("You need to replenish your stocks!");
+	    } else {
+		response.setText(numPeople + " people bought something!");
 	    }
 	}
     }
