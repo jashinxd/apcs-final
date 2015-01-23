@@ -224,6 +224,8 @@ public class Machine extends JFrame implements ActionListener{
 	    int rand = 0;
 	    for(int i = 0; i < 20; i ++){
 		random = r.nextInt(20);
+		stocks[random] = stocks [random] - 1;
+		
 	    }
 	}
     }
