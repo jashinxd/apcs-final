@@ -214,6 +214,13 @@ public class Machine extends JFrame implements ActionListener{
 	    earn = 0.00;
 	    earning.setText("$" + earn + "0");
 	}
+	if(e.getSource() == simulate){
+	    Random r = new Random();
+	    int rand = 0;
+	    for(int i = 0; i < 20; i ++){
+		random = r.nextInt(20);
+	    }
+	}
     }
     public static void main(String[] args){
 	Machine a = new Machine();
