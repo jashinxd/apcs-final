@@ -5,7 +5,7 @@ import java.util.*;
 public class Machine extends JFrame implements ActionListener{
     private Container pane;
     private JButton[] Buttons = new JButton[20];
-    private JButton add25c, add1d, add5d, replenish,reset;
+    private JButton add25c, add1d, add5d, replenish,reset,simulate;
     private double[] sprices = new double[20];
     private double[] profit = new double[20];
     private int[] stocks = new int[20];
@@ -94,6 +94,9 @@ public class Machine extends JFrame implements ActionListener{
 	reset = new JButton("Reset Profit");
 	reset.addActionListener(this);
 	pane.add(reset);
+	simulate = new JButton("simulation");
+	simulate.addActionListener(this);
+	pane.add(simulate);
 
 	//Change and Messages
 	response = new JTextArea();
@@ -223,9 +226,15 @@ public class Machine extends JFrame implements ActionListener{
 	    Random r = new Random();
 	    int rand = 0;
 	    for(int i = 0; i < 20; i ++){
-		random = r.nextInt(20);
-		stocks[random] = stocks [random] - 1;
-		
+		rand = r.nextInt(20);
+		stocks[rand] = stocks[rand] - 1;
+		earn = earn + profit[rand];
+		earning.setText("$" + earn);
+		//Aesthetic reasons
+		int len = earning.getText().length();
+		if(earning.getText().substring(len - 2, len - 1).equals(".")){
+		    earning.setText(earning.getText() + "0");
+		}
 	    }
 	}
     }
