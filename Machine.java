@@ -18,11 +18,11 @@ public class Machine extends JFrame implements ActionListener{
     private JTextArea text1,text2,text3,response,earning;
     private JPanel machine;
     private JLabel price, inserted, Stock,ProfitMade;
-    private VM jason;
+    private VM Vend;
     
     public Machine(){
 	setTitle("Vending Machine");
-	setSize(600,600);
+	setSize(600,450);
 	setLocation(500,200);
 	setResizable(false);
 	setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -64,12 +64,12 @@ public class Machine extends JFrame implements ActionListener{
 	//Buttons for Items
 	JPanel machine = new JPanel();
 	machine.setLayout(new GridLayout(10,2));
-	VM jason = new VM();
+	VM vend = new VM();
 	for(int i = 0;i<20;i ++){
-	    Buttons[i] = new JButton(jason.getItems().get(i).getname());
-	    sprices[i] = jason.getItems().get(i).getsprice();
-	    profit[i] = sprices[i] - jason.getItems().get(i).getbprice();
-	    stocks[i] = jason.getItems().get(i).getstocks();
+	    Buttons[i] = new JButton(vend.getItems().get(i).getname());
+	    sprices[i] = vend.getItems().get(i).getsprice();
+	    profit[i] = sprices[i] - vend.getItems().get(i).getbprice();
+	    stocks[i] = vend.getItems().get(i).getstocks();
 	    Buttons[i].setPreferredSize(new Dimension(250,30));
 	    machine.add(Buttons[i]);
 	    Buttons[i].addActionListener(this);
